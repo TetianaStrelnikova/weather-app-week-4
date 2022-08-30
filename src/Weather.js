@@ -1,55 +1,48 @@
 import './weather.css';
 import React from 'react';
-
+import Dateandtime from "./Dateandtime";
 export default function Weather(){
 return(
     
-    <div className="row weatherblock" >
-<div className="col-6">
-  <form>
-  <input className="changeCity"  type="text"  placeholder="Change City" autocomplete="off"/>
- <input className ="changeCitySubmit"type="submit" value="✈"/>
+<div className="row weatherblock p-2" >
+
+<div className="info col-6 p-2">
+    
+<form>
+    <input className="changeCity"  type="text"  placeholder="Change City" autocomplete="off"/>
+    <input className ="changeCitySubmit"type="submit" value="✈"/>
   </form>
-<button className="myLocation" >  My Location <i className="fa-solid fa-location-dot"></i></button>
-  <div className="realFeelPrecipitationlWindHumidity">
+  <button className="myLocation mb-3" > <i className="me-2 fa-solid fa-location-dot"></i>  My Location</button>
 
-    <ul> 
-      <li className="realFeel"  >Feels Like - <span >28°</span>  </li>
-      <li className="pressure">Pressure - <span >660</span> hPa</li>
-      <li className="wind">Wind - <span >9</span> km/hour</li>
-      <li className="humidity">Humidity - <span >60</span> %</li></ul></div>
-      
-</div>
+<h4 className="currentCity mb-0 text-center">Dubai</h4>
+<Dateandtime/>  
 
-
-        <div className="col-6 text-center">
- <div className="currentWeather">
- <h4 className="currentCity">Dubai</h4>
-
-<div>
-    <h5 className="week">Sat</h5>
-    <h5 className="currentDate" >08/06</h5>
-    <h5 className="currentTime" >20:00</h5></div>
-</div>
-
-
-<div className="currentIcon" ><i  className="fa-solid fa-cloud-bolt"></i></div>
- <div className="currentTemperature d-flex justify-content-center">
-      <div >28 </div>
-      <div >
-        <span  className="celsii">°C/</span>
-        <span className="farenheit"  href="">°F </span> </div>
-</div>
-      </div>
-    <div className="dateAndTime">  
+<div className="currentTemperature">
     
-    <div className="weatherdescription">clear sky</div>
-    
-</div></div>
+    <div className='d-flex temperature mb-2 justify-content-center'>
+        <div  className='temp'>28  </div>
+        <div>
+        <a href='/' className="celsii">°C/</a>
+        <a href='/' className="farenheit">°F </a>
+        </div>
+    </div>
+</div>
+  
 
 
 
+<div className="realFeelPrecipitationlWindHumidity">
+    <ul className='p-2'> 
+        <li > clear sky</li>
+        <li >Feels Like - <span >28°</span>  </li>
+        <li >Pressure - <span >660</span> hPa</li>
+        <li >Wind - <span >9</span> km/hour</li>
+        <li >Humidity - <span >60</span> %</li>
+    </ul>
+</div>
+</div>
 
-)
+<div className='col-6 currentIcon'></div>
 
-}
+</div>
+);}
