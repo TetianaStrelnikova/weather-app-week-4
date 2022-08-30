@@ -4,9 +4,9 @@ import Dateandtime from "./Dateandtime";
 export default function Weather(){
 return(
     
-<div className="row weatherblock p-2" >
+<div className="row weatherblock p-2 shadow-sm" >
 
-<div className="info col-6 p-2">
+<div className="info col-6 p-2 ">
     
 <form>
     <input className="changeCity"  type="text"  placeholder="Change City" autocomplete="off"/>
