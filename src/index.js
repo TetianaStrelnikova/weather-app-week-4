@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Weather from './Weather';
 import reportWebVitals from './reportWebVitals';
+import Contacts from "./Contacts"; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div className='container mt-5'>
 
-    <Weather />
+    <Weather  defaultCity="Kiev"/>
+    <Contacts/>
     </div>
   </React.StrictMode>
 );
