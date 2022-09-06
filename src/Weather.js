@@ -19,25 +19,23 @@ export default function Weather(props){
             pressure: Math.round(response.data.main.humidity),
             weatherIconUrl:`http://openweathermap.org/img/wn/${ response.data.weather[0].icon}@2x.png`,
             weatherDescription: response.data.weather[0].description,
-            city:response.data.name
-
+            city:response.data.name,
+            date: newDate(response.data.dt*1000)
 });
         if(WeatherData.ready)
 {
     return(
     
         <div className="row weatherblock p-2 shadow-sm" >
-        
         <div className="info col-6 p-2 ">
-            
         <form>
             <input className="changeCity"  type="text"  placeholder="Change City" autocomplete="off"/>
             <input className ="changeCitySubmit"type="submit" value="✈"/>
           </form>
-          <button className="myLocation mb-3" > <i className="me-2 fa-solid fa-location-dot"></i>  My Location</button>
+          <button className="myLocation mb-3" > <i className="me-2 fa-solid fa-location-dot"></i> My Location</button>
         
         <h4 className="currentCity mb-0 text-center">{city}</h4>
-        <Dateandtime/>  
+        <Dateandtime date={WeatherData.date}/>  
         <img
               src={weatherIconUrl}
               alt={weatherDescription}
