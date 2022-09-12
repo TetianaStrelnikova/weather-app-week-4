@@ -1,13 +1,13 @@
 import './weather.css';
 import React from 'react';
-
+import Conversion from "./Conversion";
 import Dateandtime from "./Dateandtime";
 import { useState } from 'react';
 
 
 export default function Weather(props){
 
-    let (WeatherData, setWeatherData) = useState({ready:false});
+    let [WeatherData, setWeatherData] = useState({ready:false});
     
     function showTemperature(response) {
         console.log(response.data);
@@ -44,10 +44,7 @@ export default function Weather(props){
             
             <div className='d-flex temperature mb-2 justify-content-center'>
                 <div  className='temp'>{temperature} </div>
-                <div>
-                <a href='/' className="celsii">°C/</a>
-                <a href='/' className="farenheit">°F </a>
-                </div>
+                <Conversion temp={WeatherData.temperature}/>
             </div>
         </div>
           
